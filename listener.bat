@@ -2,7 +2,7 @@
 
 echo ==========================================
 echo ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
-echo ©¦             TPSTP Server             ©¦
+echo ©¦             TPSPS Server             ©¦
 echo ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
 echo ==========================================
 echo Please keep this terminal until shut down.
