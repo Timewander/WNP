@@ -18,6 +18,11 @@ start /b php-cgi -b 127.0.0.1:9090 -c php.ini
 start /b php-cgi -b 127.0.0.1:9900 -c php.ini
 cd C:\WNP
 start /b KeepAlive.exe
+echo WScript.sleep 2000 > sleep.vbs
+cd C:\Windows\System32
+Wscript C:\WNP\sleep.vbs
+cd C:\WNP
+echo WScript.sleep 200 > sleep.vbs
 start Server
 cd C:\WNP\nginx
 start /b nginx
