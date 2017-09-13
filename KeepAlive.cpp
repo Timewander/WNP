@@ -11,8 +11,8 @@ void move(int x, int y) {
 
 void setup() {
 	
-	move(0, 1080);
-	keybd_event('C', 0, 0, 0);
+    move(0, 1080);
+    keybd_event('C', 0, 0, 0);
     keybd_event('C', 0, 2, 0);  
     Sleep(200);  
     keybd_event('H', 0, 0, 0);
