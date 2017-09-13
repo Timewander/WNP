@@ -43,7 +43,7 @@ int main() {
     setup();
 
     while (true) {
-        Sleep(30000);
+        Sleep(300000);
         move(x[pos], y[pos]);
         pos = 1 - pos;
     }
