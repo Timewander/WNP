@@ -10,7 +10,7 @@ void move(int x, int y) {
 }
 
 void setup() {
-	
+
     move(0, 1080);
     keybd_event('C', 0, 0, 0);
     keybd_event('C', 0, 2, 0);  
@@ -38,13 +38,13 @@ void setup() {
 int main() {  
 
     int x[2] = {1919, 1920};
-	int y[2] = {1079, 1080};
+    int y[2] = {1079, 1080};
     int pos = 0;
-	setup();
-	
+    setup();
+
     while (true) {
-    	Sleep(30000);
-    	move(x[pos], y[pos]);
-    	pos = 1 - pos;
-	}  
+        Sleep(30000);
+        move(x[pos], y[pos]);
+        pos = 1 - pos;
+    }
 }  
