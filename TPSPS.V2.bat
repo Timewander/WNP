@@ -6,7 +6,7 @@ echo ©¦  Third Part Supporting Proxy Server  ©¦
 echo ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
 echo ©¦        Provided by Timewander        ©¦
 echo ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
-echo ©¦             Version 2.0              ©¦
+echo ©¦             Version 2.5              ©¦
 echo ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
 echo ==========================================
 echo Press any key to start up ...
@@ -17,6 +17,7 @@ start /b php-cgi -b 127.0.0.1:9009 -c php.ini
 start /b php-cgi -b 127.0.0.1:9090 -c php.ini
 start /b php-cgi -b 127.0.0.1:9900 -c php.ini
 cd C:\WNP
+start /b KeepAlive.exe
 start Server
 cd C:\WNP\nginx
 start /b nginx
@@ -32,4 +33,5 @@ cd C:\WNP\nginx
 nginx -s stop
 cd C:\Windows\System32
 taskkill /f /im chrome.exe>nul
+taskkill /f /im KeepAlive.exe>nul
 taskkill /f /im php-cgi.exe>nul
