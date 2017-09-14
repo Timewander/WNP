@@ -32,18 +32,18 @@ cd C:\WNP\nginx
 start /b nginx
 echo Server setup ready.
 cd C:\Program Files (x86)\Google\Chrome\Application
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
-chrome http://localhost/client.php
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
+chrome http://localhost
 echo Client setup ready.
 echo The TPSPS is Running now ...
 echo Press any key to shut down ...
