@@ -32,6 +32,9 @@ void setup() {
     Sleep(200);  
     keybd_event(0x0d, 0, 0, 0);  
     keybd_event(0x0d, 0, 2, 0);
+    Sleep(50);  
+    keybd_event(0x0d, 0, 0, 0);  
+    keybd_event(0x0d, 0, 2, 0);
     Sleep(3000);
 }
   
