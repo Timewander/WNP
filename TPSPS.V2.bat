@@ -21,7 +21,7 @@ start /b php-cgi -b 127.0.0.1:9900 -c php.ini
 echo FastCGI setup ready.
 cd C:\WNP
 start /b KeepAlive.exe
-echo WScript.sleep 4000 > sleep.vbs
+echo WScript.sleep 5000 > sleep.vbs
 cd C:\Windows\System32
 Wscript C:\WNP\sleep.vbs
 echo Chrome setup ready.
