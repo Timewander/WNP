@@ -9,10 +9,19 @@ echo Please keep this terminal until shut down.
 
 :main
 cd c:\windows\system32
-netstat -ano|findstr ".*:9000\>"|find /i /c "LISTENING" > nul || goto restart1
-netstat -ano|findstr ".*:9009\>"|find /i /c "LISTENING" > nul || goto restart2
-netstat -ano|findstr ".*:9090\>"|find /i /c "LISTENING" > nul || goto restart3
-netstat -ano|findstr ".*:9900\>"|find /i /c "LISTENING" > nul || goto restart4
+netstat -ano|findstr ".*:9000\>"|find /i /c "LISTENING" > c:\wnp\process
+set /p count=<c:\wnp\process
+if %count% LEQ 1 (goto restart1)
+netstat -ano|findstr ".*:9009\>"|find /i /c "LISTENING" > c:\wnp\process
+set /p count=<c:\wnp\process
+if %count% LEQ 1 (goto restart2)
+netstat -ano|findstr ".*:9090\>"|find /i /c "LISTENING" > c:\wnp\process
+set /p count=<c:\wnp\process
+if %count% LEQ 1 (goto restart3)
+netstat -ano|findstr ".*:9900\>"|find /i /c "LISTENING" > c:\wnp\process
+set /p count=<c:\wnp\process
+if %count% LEQ 1 (goto restart4)
+del c:\wnp\process
 goto sleep
 
 :restart1
