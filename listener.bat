@@ -7,44 +7,19 @@ echo ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
 echo ==========================================
 echo Please keep this terminal until shut down.
 
-:main
-cd c:\windows\system32
-netstat -ano|findstr ".*:9000\>"|find /i /c "LISTENING" > c:\wnp\process
-set /p count=<c:\wnp\process
-if %count% LEQ 1 (goto restart1)
-netstat -ano|findstr ".*:9009\>"|find /i /c "LISTENING" > c:\wnp\process
-set /p count=<c:\wnp\process
-if %count% LEQ 1 (goto restart2)
-netstat -ano|findstr ".*:9090\>"|find /i /c "LISTENING" > c:\wnp\process
-set /p count=<c:\wnp\process
-if %count% LEQ 1 (goto restart3)
-netstat -ano|findstr ".*:9900\>"|find /i /c "LISTENING" > c:\wnp\process
-set /p count=<c:\wnp\process
-if %count% LEQ 1 (goto restart4)
-del c:\wnp\process
-goto sleep
+set divide=10000
 
-:restart1
-start /b c:\wnp\cgi1.bat > nul
-echo %time% cgi 9000 restart
-goto sleep
-
-:restart2
-start /b c:\wnp\cgi2.bat > nul
-echo %time% cgi 9009 restart
-goto sleep
-
-:restart3
-start /b c:\wnp\cgi3.bat > nul
-echo %time% cgi 9090 restart
-goto sleep
-
-:restart4
-start /b c:\wnp\cgi4.bat > nul
-echo %time% cgi 9900 restart
-goto sleep
-
-:sleep
+:loop
+set /a port=9000 / %divide% + 9000
+if %divide% LEQ 10 (set divide=10000) else (set /a divide=%divide% / 10)
 cd c:\windows\system32
 Wscript c:\wnp\sleep.vbs
-goto main
+netstat -ano | findstr ".*:%port%\>" | find /i /c "LISTENING" > c:\wnp\process
+set /p count=<c:\wnp\process
+del c:\wnp\process
+if %count% GTR 1 (goto loop)
+
+cd C:\WNP\php7
+start /b php-cgi -b 127.0.0.1:%port% -c php.ini
+echo %time% cgi %port% start up
+goto loop
